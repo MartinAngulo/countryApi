@@ -1,4 +1,5 @@
 require('dotenv').config();
+import * as pg from 'pg';
 const { Sequelize } = require('sequelize');
 const fs = require('fs');
 const path = require('path');
@@ -11,6 +12,7 @@ const sequelize = new Sequelize(
   `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/countrydb`, {
   logging: false, // set to console.log to see the raw SQL queries
   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
+  dialectModule: pg
   //options for azure DB:
   // dialectOptions: {
   //   ssl: {
