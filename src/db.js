@@ -2,13 +2,13 @@ require('dotenv').config();
 const { Sequelize } = require('sequelize');
 const fs = require('fs');
 const path = require('path');
-//const {
-//  DB_USER, DB_PASSWORD, DB_HOST,
-//} = process.env;
+const {
+ DB_USER, DB_PASSWORD, DB_HOST,
+} = process.env;
 
 
 const sequelize = new Sequelize(
-  `postgres://countryAdmin:Admin123@countrydb.cxebvdbfdavf.us-east-1.rds.amazonaws.com/countrydb`, {
+  `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/countrydb`, {
   logging: false, // set to console.log to see the raw SQL queries
   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
   //options for azure DB:

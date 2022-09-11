@@ -1,6 +1,6 @@
 require('dotenv').config();
 const axios = require('axios');
-//const { COUNTRY_API } = process.env;
+const { COUNTRY_API } = process.env;
 const { Country } = require('../db');
 // Importar todos los routers;
 // Ejemplo: const authRouter = require('./auth.js');
@@ -14,7 +14,7 @@ const getAllCountries = async () => {
 
     //Otherwise, request all data to the API
     else {
-        const allCountries = await axios.get(`https://restcountries.com/v3/all`); //GET request to Country API
+        const allCountries = await axios.get(`${COUNTRY_API}all`); //GET request to Country API
         let info = []; //New array to save the response request fix
 
         await allCountries.data.forEach(country => {
