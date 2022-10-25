@@ -9,7 +9,7 @@ const {
 
 
 const sequelize = new Sequelize(
-  `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/countrydb`, {
+  `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/wmmwewqd`, {
   logging: false, // set to console.log to see the raw SQL queries
   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
   dialectModule: pg
